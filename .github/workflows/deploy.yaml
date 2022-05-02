@@ -3,7 +3,7 @@ name: "Deploy"
 on:
     push:
 jobs:
-    test:
+    deploy:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -12,5 +12,5 @@ jobs:
                   accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
                   secretAccessKey: ${{ secrets.SECRET_ACCESS_KEY }}
                   bucket: ${{ secrets.BUCKET }}
-                  path: "./"
+                  path: "./site"
                   clear: false
